@@ -21,9 +21,31 @@ body {font-family: "Lato", sans-serif;}
   display: block;
 }
 
+
+.w3-display-container {
+    width: 600px;
+    float: left;
+    margin-top: 20px;
+}
+
+ul.nav, ul.nav-pills {
+    margin-bottom: 50px;
+}
+
+ul.cd-faq-categories {
+    margin-bottom: 50px;
+}
+
+.cd-faq-content {
+    font-style: italic;
+    font-weight: bold;
+}
+
+
 .sidebar a:hover {
   font-weight: bold!important; /*not sure yet why this won't work without important */
 }
+
 
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
@@ -40,8 +62,15 @@ body {font-family: "Lato", sans-serif;}
     display:none;
 }
 
+ul {
+    list-style: none;
+}
 .tab-pane h3 {
     font-weight: 600;
+}
+
+div h3 {
+    text-decoration: underline;
 }
 
 @media screen and (max-height: 450px) {
