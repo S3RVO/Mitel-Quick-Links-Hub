@@ -61,4 +61,44 @@ function hideAllContent(){
 
 
 
+// MiVo 250 slideshow logic
+var slideIndex = 1;
+showDivs_mivo250(slideIndex);
+
+function plusDivs_mivo250(n) {
+  showDivs_mivo250(slideIndex += n);
+}
+
+function showDivs_mivo250(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-mivo250");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+// MiVo Business slideshow logic
+var slideIndex = 1;
+showDivs_mivoBiz(slideIndex);
+
+function plusDivs_mivoBiz(n) {
+  showDivs_mivoBiz(slideIndex += n);
+}
+
+function showDivs_mivoBiz(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides-mivoBiz");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+
+
 
