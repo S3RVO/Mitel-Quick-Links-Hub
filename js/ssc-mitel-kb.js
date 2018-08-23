@@ -1,4 +1,6 @@
-
+// initialize slideshow variables
+var slideIndex = 1;
+var product = "mivo250";
 
 
 //***************Variable Declarations**************//
@@ -18,6 +20,11 @@ document.getElementById("mivo250-link").onclick = function(e) {
     if ($("#mivo250-content").hasClass("hide")){
             $("#mivo250-content").removeClass("hide");
            }
+    product = "mivo250";
+    slideIndex = 1;
+    
+    showDivs(slideIndex, product);
+    
     e.preventDefault();
 };
 
@@ -27,8 +34,13 @@ document.getElementById("mivoBiz-link").onclick = function(e) {
     hideAllContent();
     this.style.fontWeight = "700";
     if ($("#mivoBiz-content").hasClass("hide")){
-            $("#mivoBiz-content").removeClass("hide");
+           $("#mivoBiz-content").removeClass("hide");
            }
+    product = "mivoBiz";
+    slideIndex = 1;
+    
+    showDivs(slideIndex, product);
+    
     e.preventDefault();
 };
 
@@ -60,44 +72,73 @@ function hideAllContent(){
 }
 
 
+// Slideshow logic, with edits added to accomodate respective slideshows for each product category
+// Original Slideshow code commented out below
 
-// MiVo 250 slideshow logic
-var slideIndex = 1;
-showDivs_mivo250(slideIndex);
 
-function plusDivs_mivo250(n) {
-  showDivs_mivo250(slideIndex += n);
+
+
+
+
+showDivs(slideIndex, product);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n, product);
 }
 
-function showDivs_mivo250(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides-mivo250");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
+function showDivs(n, p) {
+    var i;
+    var x = document.getElementsByClassName("mySlides"); // grab ALL slide containers
+
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; // hide ALL slide containers 
+    }
+
+
+    x = document.getElementsByClassName(p); // grab only target category slide containers
+    
+    if (n > x.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = x.length}
+    
+    for (i = 0; i < x.length; i++) { // hide all target category containers
+        x[i].style.display = "none";  
+    }
+
+    x[slideIndex-1].style.display = "block"; // reveal sole target category slide container as determined by slide #
+
 }
 
-// MiVo Business slideshow logic
-var slideIndex = 1;
-showDivs_mivoBiz(slideIndex);
 
-function plusDivs_mivoBiz(n) {
-  showDivs_mivoBiz(slideIndex += n);
-}
 
-function showDivs_mivoBiz(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides-mivoBiz");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
+
+
+
+
+
+
+
+
+// original slideshow code//
+
+//<script>
+//var slideIndex = 1;
+//showDivs(slideIndex);
+//
+//function plusDivs(n) {
+//  showDivs(slideIndex += n);
+//}
+//
+//function showDivs(n) {
+//  var i;
+//  var x = document.getElementsByClassName("mySlides");
+//  if (n > x.length) {slideIndex = 1}    
+//  if (n < 1) {slideIndex = x.length}
+//  for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";  
+//  }
+//  x[slideIndex-1].style.display = "block";  
+//}
+//</script>
 
 
 
