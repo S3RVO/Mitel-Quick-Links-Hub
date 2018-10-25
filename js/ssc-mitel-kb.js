@@ -44,6 +44,22 @@ document.getElementById("mivoBiz-link").onclick = function(e) {
     e.preventDefault();
 };
 
+// MiVoice Call Recording Link Event Handler
+document.getElementById("mivo-CR-link").onclick = function(e) {
+    checkLinks();
+    hideAllContent();
+    this.style.fontWeight = "700";
+    if ($("#mivo-call-recording-content").hasClass("hide")){
+           $("#mivo-call-recording-content").removeClass("hide");
+           }
+    product = "mivoCR";
+    slideIndex = 1;
+    
+    showDivs(slideIndex, product);
+    
+    e.preventDefault();
+};
+
 
 
 

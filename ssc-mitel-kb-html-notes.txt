@@ -1,0 +1,38 @@
+To make a new link along with all of its tabs....
+
+In the Main HTML file:
+
+Create the new link in the sidebar
+   give it an id of [linkname]-link, with href=#link name
+   
+
+copy and paste from another full content div
+   add the "hide" class to the outer div, and an id of [linkname]-content
+
+edit the UL tab names so that the first tab has href="#home-[productname]
+   same goes for each tab after, but add it to the menu1, 2, 3, etc href strings, e.g. menu1-[productname] and so on
+
+
+for each of the tab content divs...
+   give the 1st nested div an id of "home-[productname]"
+   name the H3 tag accordingly
+    <!-- Slideshow -->
+    if the tab info has a slideshow, this is where it should go now, after the H3.
+    make sure for each open div display container that you add the product name as a class, coupled with mySlides class
+
+    make sure the remaining tabs also have the id of menu1-[productname], menu2-[productname], etc.
+
+
+
+In the main JS file:
+
+create new event handler for the new category link by copying one of the previously made ones first
+
+
+
+
+
+
+    
+
+
